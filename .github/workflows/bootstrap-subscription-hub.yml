@@ -64,3 +64,5 @@ jobs:
           git status --short
           git commit -m "Publish recovered AVM Subscription Hub project"
           git push origin HEAD:main
+
+# trigger: recovered-project-publish
