@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = ["core", "contracts/hub", "contracts/receiver", "vendor/avm-contract-sdk"]
+[profile.release]
+opt-level = "s"
+lto = "thin"
+codegen-units = 1
+panic = "abort"

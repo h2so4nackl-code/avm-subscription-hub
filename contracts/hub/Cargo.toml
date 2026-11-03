@@ -1,0 +1,16 @@
+[package]
+name = "avm-subscription-hub"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+[lib]
+crate-type = ["cdylib", "rlib"]
+[features]
+default = ["guest"]
+guest = []
+[dependencies]
+avm-subscription-core = {path = "../../core"}
+avm-contract-sdk = {path = "../../vendor/avm-contract-sdk"}
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+dlmalloc = {version = "=0.2.14", features = ["global"]}

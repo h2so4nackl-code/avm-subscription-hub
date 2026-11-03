@@ -1,0 +1,29 @@
+{
+  "binaryen": "wasm-opt version 133 (version_133)",
+  "flags": [
+    "-Oz",
+    "--enable-bulk-memory",
+    "--enable-sign-ext",
+    "--enable-nontrapping-float-to-int",
+    "--enable-mutable-globals",
+    "--enable-multivalue",
+    "--enable-reference-types",
+    "--strip-debug"
+  ],
+  "contracts": {
+    "hub": {
+      "compiler_bytes": 71587,
+      "optimized_bytes": 61950,
+      "compiler_sha256": "c1bc0a51ea59ae547bd5dcb41b863e1d86ac3d7cfb53564ce6f52b04d022b7f8",
+      "optimized_sha256": "b84d327e28362be6e8ebe3bb9f60879d235f8276364c60357475d59dd87f0414",
+      "two_independent_optimizer_outputs_match": true
+    },
+    "receiver": {
+      "compiler_bytes": 37438,
+      "optimized_bytes": 31245,
+      "compiler_sha256": "304a2a22442521a5f4a0616029f4f33b61d3c5689ed9dd2c08092d80906d9ec7",
+      "optimized_sha256": "b638b7ab05189b6a0c370c15252e6ad34a6d94ad827468bfe0574694d538a80f",
+      "two_independent_optimizer_outputs_match": true
+    }
+  }
+}

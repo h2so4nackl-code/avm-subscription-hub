@@ -1,0 +1,274 @@
+[descriptor]
+execution_mode = "message_isolated"
+state_schema_id = "4dd0d0475df7e622aa7b1f5269e1fb3660b396232321cb8947f66a95d6ddc795"
+
+[abi]
+state_root_type_id = 1
+
+[[abi.types]]
+id = 1
+kind = "fixed_bytes"
+name = "state"
+len = 12288
+
+[[abi.types]]
+id = 2
+kind = "fixed_bytes"
+name = "bytes_1"
+len = 1
+
+[[abi.types]]
+id = 3
+kind = "fixed_bytes"
+name = "bytes_6"
+len = 6
+
+[[abi.types]]
+id = 4
+kind = "fixed_bytes"
+name = "bytes_8"
+len = 8
+
+[[abi.types]]
+id = 5
+kind = "fixed_bytes"
+name = "bytes_9"
+len = 9
+
+[[abi.types]]
+id = 6
+kind = "fixed_bytes"
+name = "bytes_17"
+len = 17
+
+[[abi.types]]
+id = 7
+kind = "fixed_bytes"
+name = "bytes_21"
+len = 21
+
+[[abi.types]]
+id = 8
+kind = "fixed_bytes"
+name = "bytes_26"
+len = 26
+
+[[abi.types]]
+id = 9
+kind = "fixed_bytes"
+name = "bytes_32"
+len = 32
+
+[[abi.types]]
+id = 10
+kind = "fixed_bytes"
+name = "bytes_44"
+len = 44
+
+[[abi.types]]
+id = 11
+kind = "fixed_bytes"
+name = "bytes_60"
+len = 60
+
+[[abi.types]]
+id = 12
+kind = "fixed_bytes"
+name = "bytes_64"
+len = 64
+
+[[abi.types]]
+id = 13
+kind = "fixed_bytes"
+name = "bytes_80"
+len = 80
+
+[[abi.types]]
+id = 14
+kind = "fixed_bytes"
+name = "bytes_96"
+len = 96
+
+[[abi.types]]
+id = 15
+kind = "fixed_bytes"
+name = "bytes_122"
+len = 122
+
+[[abi.methods]]
+name = "subscriptions.deploy"
+input_type_id = 15
+
+[[abi.methods]]
+name = "subscriptions.status"
+
+[[abi.methods]]
+name = "subscriptions.topup"
+
+[[abi.methods]]
+name = "subscriptions.pause"
+input_type_id = 2
+
+[[abi.methods]]
+name = "subscriptions.admin.propose"
+input_type_id = 9
+
+[[abi.methods]]
+name = "subscriptions.admin.accept"
+
+[[abi.methods]]
+name = "subscriptions.wallet.open"
+input_type_id = 12
+
+[[abi.methods]]
+name = "subscriptions.merchant.add"
+input_type_id = 14
+
+[[abi.methods]]
+name = "subscriptions.plan.new"
+input_type_id = 7
+
+[[abi.methods]]
+name = "subscriptions.plan.edit"
+input_type_id = 8
+
+[[abi.methods]]
+name = "subscriptions.deposit"
+input_type_id = 2
+
+[[abi.methods]]
+name = "subscriptions.join"
+input_type_id = 3
+
+[[abi.methods]]
+name = "subscriptions.extend"
+input_type_id = 5
+
+[[abi.methods]]
+name = "subscriptions.collect"
+input_type_id = 5
+
+[[abi.methods]]
+name = "subscriptions.cancel"
+input_type_id = 4
+
+[[abi.methods]]
+name = "subscriptions.offer"
+input_type_id = 11
+
+[[abi.methods]]
+name = "subscriptions.offer.accept"
+input_type_id = 10
+
+[[abi.methods]]
+name = "subscriptions.offer.revoke"
+input_type_id = 4
+
+[[abi.methods]]
+name = "subscriptions.withdraw.customer"
+input_type_id = 6
+
+[[abi.methods]]
+name = "subscriptions.withdraw.merchant"
+input_type_id = 6
+
+[[abi.methods]]
+name = "subscriptions.withdraw.fees"
+input_type_id = 6
+
+[[abi.methods]]
+name = "subscriptions.callback"
+input_type_id = 13
+
+[[abi.types]]
+id = 16
+kind = "u128"
+name = "u128_value"
+
+[[abi.types]]
+id = 17
+kind = "u64"
+name = "u64_value"
+
+[[abi.events]]
+name = "subscriptions.changed"
+
+[[abi.events.fields]]
+id = 1
+type_id = 16
+name = "asset0_liability"
+
+[[abi.events.fields]]
+id = 2
+type_id = 16
+name = "asset1_liability"
+
+[[abi.events.fields]]
+id = 3
+type_id = 17
+name = "kind"
+
+[[abi.events.fields]]
+id = 4
+type_id = 17
+name = "subscription"
+
+[[abi.errors]]
+status_code = 4000
+name = "invalid_args"
+message = "invalid args"
+
+[[abi.errors]]
+status_code = 4001
+name = "unauthorized"
+message = "unauthorized"
+
+[[abi.errors]]
+status_code = 4002
+name = "invalid_state"
+message = "invalid state"
+
+[[abi.errors]]
+status_code = 4003
+name = "invalid_phase"
+message = "invalid phase"
+
+[[abi.errors]]
+status_code = 4004
+name = "unexpected_value"
+message = "unexpected value"
+
+[[abi.errors]]
+status_code = 4005
+name = "invalid_time"
+message = "invalid time"
+
+[[abi.errors]]
+status_code = 4006
+name = "transfer_pending"
+message = "transfer pending"
+
+[[abi.errors]]
+status_code = 4007
+name = "invalid_callback"
+message = "invalid callback"
+
+[[abi.errors]]
+status_code = 4008
+name = "capacity_or_overflow"
+message = "capacity or overflow"
+
+[[abi.errors]]
+status_code = 4009
+name = "insufficient_balance"
+message = "insufficient balance"
+
+[[abi.errors]]
+status_code = 4010
+name = "paused"
+message = "paused"
+
+[[abi.errors]]
+status_code = 4011
+name = "stale_reference"
+message = "stale reference"

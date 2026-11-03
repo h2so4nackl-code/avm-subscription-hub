@@ -1,0 +1,26 @@
+// Generated from official SDK ACAB by scripts/sync_ids.py.
+pub const STATUS: u64 = 0x17b52cf190008892;
+pub const TOPUP: u64 = 0xc4faaa8e3b524392;
+pub const PAUSE: u64 = 0x778c714b6adb22d2;
+pub const ADMIN_PROPOSE: u64 = 0xe208ec358b27a8a7;
+pub const ADMIN_ACCEPT: u64 = 0xb64da9fe83fde320;
+pub const WALLET_OPEN: u64 = 0x3174ff9cd69e0043;
+pub const MERCHANT_ADD: u64 = 0x14ecafbd86351c1e;
+pub const PLAN_NEW: u64 = 0x72a8729b637baa86;
+pub const PLAN_EDIT: u64 = 0x69e4c1c006d9f9e0;
+pub const DEPOSIT: u64 = 0x31ef6273a5e42bfd;
+pub const JOIN: u64 = 0x08cd367878f5ad41;
+pub const EXTEND: u64 = 0x44680c2aaf87affd;
+pub const COLLECT: u64 = 0xe19d6e7f12198c3d;
+pub const CANCEL: u64 = 0x6038f489d3760a57;
+pub const OFFER: u64 = 0x752814c313291ac2;
+pub const OFFER_ACCEPT: u64 = 0x3d7000241f3f7e32;
+pub const OFFER_REVOKE: u64 = 0x0dc8edd166c512ce;
+pub const WITHDRAW_CUSTOMER: u64 = 0xc9e71cbaccfafde6;
+pub const WITHDRAW_MERCHANT: u64 = 0x5f077b58816b1479;
+pub const WITHDRAW_FEES: u64 = 0xb13ede8c007815aa;
+pub const CALLBACK: u64 = 0xfd8ac145b8518272;
+pub const BIND: u64 = 0x67ee81b4042dba72;
+pub const REJECT: u64 = 0x2ba9e91522753ef7;
+pub const RECEIVE: u64 = 0xe5955e310e49b5f8;
+pub const EVENT: u64 = 0xd6e69669de0a1055;

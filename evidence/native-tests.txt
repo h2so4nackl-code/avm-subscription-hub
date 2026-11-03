@@ -1,0 +1,171 @@
+   Compiling avm-subscription-core v0.1.0 (/workspace/scratch/3c217dddcafc/avm-subscription-hub/core)
+   Compiling avm-subscription-receiver v0.1.0 (/workspace/scratch/3c217dddcafc/avm-subscription-hub/contracts/receiver)
+   Compiling avm-subscription-hub v0.1.0 (/workspace/scratch/3c217dddcafc/avm-subscription-hub/contracts/hub)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.52s
+     Running unittests src/lib.rs (target/debug/deps/avm_contract_sdk-82d4ea57941401e9)
+
+running 9 tests
+test runtime::tests::batch_dispatch_preserves_count_mode_and_failed_index_checks ... ok
+test runtime::tests::direct_dispatch_writes_once_without_the_vec_growth_path ... ok
+test runtime::tests::dispatch_failure_capacity_and_overflow_leave_input_owned ... ok
+test runtime::tests::bounded_writer_failures_release_only_the_output_reservation ... ok
+test runtime::tests::dispatch_preserves_live_input_and_lifo_output_ownership ... ok
+test output::work::checked_sizes_reject_arithmetic_overflow ... ok
+test runtime::tests::direct_message_sections_and_batch_match_the_public_serializer ... ok
+test runtime::tests::input_copy_preserves_bytes_and_live_bounds_at_chunk_boundaries ... ok
+test runtime::tests::ten_thousand_wallet_sized_outputs_remove_observed_vec_growth_and_copy ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.28s
+
+     Running unittests src/lib.rs (target/debug/deps/avm_subscription_core-5e2b6307402dd60f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/avm_subscription_hub-761723c549e95ace)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/lifecycle.rs (target/debug/deps/lifecycle-cb95481e6796ee7b)
+
+running 86 tests
+test attempt_limit_stops_new_deposits_and_withdrawals ... ok
+test balances_are_checked_before_dispatch ... ok
+test billing_due_boundary_splits_fee_exactly ... ok
+test admin_pause_does_not_block_customer_withdrawal ... ok
+test callback_without_pending_fails ... ok
+test bounded_catchup_collects_only_requested_periods ... ok
+test accepting_offer_closes_with_agreed_split ... ok
+test billing_before_due_is_rejected ... ok
+test cancellation_after_end_never_overcharges ... ok
+test admin_handover_requires_proposal_and_new_admin_signature ... ok
+test cancellation_at_start_refunds_whole_reserve ... ok
+test config_and_state_roundtrip ... ok
+test config_rejects_duplicate_assets ... ok
+test cancellation_is_owner_only ... ok
+test config_rejects_fee_above_cap ... ok
+test config_rejects_shell_principal ... ok
+test config_rejects_zero_authority_and_fuel ... ok
+test cancellation_catches_all_completed_periods ... ok
+test cancellation_prorates_partial_period ... ok
+test completed_subscription_releases_slot_and_stale_id_fails ... ok
+test collection_is_permissionless_and_cannot_double_bill ... ok
+test deployment_requires_admin ... ok
+test clock_rewind_rejects ... ok
+test deposits_require_registered_wallet ... ok
+test deposit_rejects_insufficient_actual_balance ... ok
+test deposit_overflow_is_atomic ... ok
+test corrupt_padding_and_lengths_reject ... ok
+test cooperative_zero_award_waives_unearned_future_budget ... ok
+test deposits_keep_asset_ledgers_separate ... ok
+test fee_and_proration_match_independent_integer_reference ... ok
+test deposits_require_exact_positive_asset ... ok
+test extension_preserves_original_price_and_invalidates_offer ... ok
+test fee_reserve_must_be_backed_by_shell ... ok
+test expired_offer_cannot_settle ... ok
+test edits_do_not_change_existing_subscription_terms ... ok
+test failed_withdrawal_requires_exact_asset_refund ... ok
+test fee_rounding_is_cumulative_per_subscription ... ok
+test inactive_plan_blocks_new_join ... ok
+test join_reserves_only_selected_asset ... ok
+test join_rejects_stale_price_quote ... ok
+test max_u128_proration_avoids_naive_product_overflow ... ok
+test liability_tampering_rejects ... ok
+test maximum_state_occupancy_is_canonical_and_bounded ... ok
+test join_checks_budget_and_timestamp_overflow ... ok
+test concurrent_subscription_capacity_and_slot_reuse ... ok
+test malformed_calls_return_no_effects ... ok
+test merchant_capacity_has_explicit_failure ... ok
+test merchant_registration_is_admin_only ... ok
+test merchant_and_fee_withdrawal_destinations_are_distinct ... ok
+test extension_is_owner_only_and_bounded ... ok
+test merchant_registration_rejects_duplicate_key ... ok
+test maximum_allowed_platform_fee_is_exact ... ok
+test merchants_cannot_withdraw_customer_or_protocol_liabilities ... ok
+test offer_acceptance_at_deadline_is_inclusive ... ok
+test new_causal_hash_is_inserted_in_canonical_position ... ok
+test offer_accrues_until_proposal_and_reserves_exact_award ... ok
+test pause_can_be_set_during_pending_and_callback_still_settles ... ok
+test pause_blocks_sales_but_preserves_customer_exit ... ok
+test join_checks_term_bounds_and_available_credit ... ok
+test offer_requires_counterparty_and_exact_nonce_digest ... ok
+test plan_creation_requires_merchant ... ok
+test pause_is_admin_only ... ok
+test offer_checks_remaining_reserve_and_expiry ... ok
+test plan_capacity_still_allows_version_edits ... ok
+test pending_blocks_repeat_withdrawals_and_financial_mutations ... ok
+test plan_rejects_invalid_price_period_and_asset ... ok
+test replacing_offer_changes_nonce_even_with_same_digest ... ok
+test replayed_failure_hash_cannot_settle_new_attempt ... ok
+test plan_edit_requires_owner_and_expected_version ... ok
+test sorted_receipt_history_rejects_noncanonical_order ... ok
+test revoke_offer_prevents_later_acceptance ... ok
+test successful_customer_withdrawal_reduces_only_its_asset ... ok
+test unsolicited_value_rejects_ordinary_methods ... ok
+test successful_merchant_and_fee_callbacks_reduce_correct_credit ... ok
+test wallet_open_rejects_cross_dapp ... ok
+test wallet_open_rejects_duplicate_and_self_destination ... ok
+test independent_python_bigint_vectors_match ... ok
+test subsequent_billing_invalidates_offer ... ok
+test success_callback_must_not_return_principal ... ok
+test withdrawal_does_not_debit_until_settled ... ok
+test wallet_capacity_has_explicit_failure ... ok
+test wrong_source_or_modified_receipt_cannot_settle ... ok
+test zero_platform_fee_credits_whole_service_amount ... ok
+test withdrawal_rejects_zero_or_invalid_asset ... ok
+test subscription_slots_are_reusable_without_reusing_ids ... ok
+test single_byte_mutations_never_panic_or_accept_noncanonical_state ... ok
+
+test result: ok. 86 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+     Running unittests src/lib.rs (target/debug/deps/avm_subscription_receiver-43e0bec6494f0e75)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/receiver.rs (target/debug/deps/receiver-d16691935e659d27)
+
+running 12 tests
+test cumulative_balance_overflow_rejects_atomically ... ok
+test deliberate_failure_has_no_state_or_acknowledgement ... ok
+test binding_is_owner_only_and_one_time ... ok
+test externally_spoofed_receive_rejects ... ok
+test accepts_exact_principal_and_echoes_receipt ... ok
+test second_asset_credits_only_second_counter ... ok
+test receipt_asset_index_must_match_configured_currency ... ok
+test exact_currency_and_amount_are_required ... ok
+test duplicate_and_stale_attempts_reject ... ok
+test malformed_receipts_and_state_padding_reject ... ok
+test unbound_destination_rejects ... ok
+test wrong_source_and_missing_request_are_rejected ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests avm_contract_sdk
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests avm_subscription_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests avm_subscription_hub
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests avm_subscription_receiver
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

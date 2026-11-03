@@ -1,0 +1,4 @@
+    Checking avm-subscription-core v0.1.0 (/workspace/scratch/3c217dddcafc/avm-subscription-hub/core)
+    Checking avm-subscription-receiver v0.1.0 (/workspace/scratch/3c217dddcafc/avm-subscription-hub/contracts/receiver)
+    Checking avm-subscription-hub v0.1.0 (/workspace/scratch/3c217dddcafc/avm-subscription-hub/contracts/hub)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.44s
