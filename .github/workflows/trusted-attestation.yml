@@ -1,6 +1,9 @@
 name: AVM trusted build attestation
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -13,7 +16,7 @@ jobs:
     timeout-minutes: 15
     environment: avm-attestation-signing
     steps:
-      - name: Check out the dispatched commit
+      - name: Check out the triggering commit
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: ${{ github.sha }}

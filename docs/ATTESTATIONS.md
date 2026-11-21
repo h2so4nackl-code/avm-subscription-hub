@@ -1,7 +1,7 @@
 # Trusted AVM build attestations
 
-The **AVM trusted build attestation** workflow runs manually on `main` and signs
-the native test report for the dispatched commit. The signing step reads the
+The **AVM trusted build attestation** workflow runs after each push to `main` and can
+also be run manually. It signs the native test report for the triggering commit. The signing step reads the
 persistent Ed25519 key from the `avm-attestation-signing` GitHub environment.
 It verifies the signature against the configured public key before uploading
 the report. The **AVM build attestation demo** uses a disposable key.
@@ -44,6 +44,8 @@ Publish or share `signer.pub` through a channel verifiers already trust, such as
 a signed release. Keep that copy independent of the workflow artifact.
 
 ## Run and verify
+
+Every push to `main` starts the workflow. To start it manually on `main`:
 
 ```bash
 gh workflow run trusted-attestation.yml \
