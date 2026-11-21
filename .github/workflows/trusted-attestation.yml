@@ -1,0 +1,45 @@
+name: AVM trusted build attestation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  attest:
+    if: github.repository == 'h2so4nackl-code/avm-subscription-hub' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: avm-attestation-signing
+    steps:
+      - name: Check out the dispatched commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Install pinned Rust toolchains
+        run: |
+          rustup toolchain install 1.93.0 --profile minimal
+          rustup toolchain install 1.99.1 --profile minimal
+
+      - name: Build the CLI and run native tests
+        run: bash scripts/attest_native_tests.sh "$RUNNER_TEMP/avm-attestation" prepare
+
+      - name: Sign and verify against the configured public key
+        env:
+          ATTEST_SIGNING_SEED_B64: ${{ secrets.AVM_ATTEST_SIGNING_SEED_B64 }}
+          ATTEST_PUBLIC_KEY: ${{ vars.AVM_ATTEST_PUBLIC_KEY }}
+        run: bash scripts/attest_native_tests.sh "$RUNNER_TEMP/avm-attestation" trusted
+
+      - name: Upload verified attestation
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: avm-trusted-attestation-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/avm-attestation/
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Require passing subject tests
+        run: test "$(cat "$RUNNER_TEMP/avm-attestation/test-exit-code.txt")" -eq 0
